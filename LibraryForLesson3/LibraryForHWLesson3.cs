@@ -181,5 +181,39 @@ namespace LibraryForLesson3
             return sumEvenNumbers > sumOddNumbers ? true : false;
         }
 
+        public static int ReverseInt(int numberA)
+        {
+            int result = 0;
+
+            while (numberA > 0)
+            {
+                result = result * 10 + numberA % 10;
+                numberA /= 10;
+            }
+
+            return result;
+        }
+
+        public static bool FindNumberAbyB(int numberA, int numberB)
+        {
+            int result = 0;
+
+            string tempStrA = Convert.ToString(numberA);
+            string tempStrB = Convert.ToString(numberB);
+            for (int i = 0; i < tempStrB.Length - 1; i++)
+            {
+                if (tempStrB.IndexOf(tempStrA) != -1)
+                {
+                    result = tempStrB.IndexOf(tempStrA);
+                    break;
+                }
+                else
+                {
+                    result = tempStrB.IndexOf(tempStrA);
+                }
+            }
+
+            return result == -1 ? false : true;
+        }
     }
 }

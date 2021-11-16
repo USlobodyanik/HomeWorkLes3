@@ -23,10 +23,11 @@ namespace HWLesson3
             //Console.WriteLine($"Check for Task 8, Cube Root for 27 = {LibraryForHWLesson3.CubeRoot(27)}");
             //Console.WriteLine($"Check for Task 9, " +
             //    $"Odd numbers by 12 = {LibraryForHWLesson3.OddNumbersByNumberA(12)}");
-            //Console.WriteLine($"Check for Task 10, " +
+            //Console.WriteLine($"Check for Task 10, Reverse number 256 = {LibraryForHWLesson3.ReverseInt(256)}");
+            //Console.WriteLine($"Check for Task 11, " +
             //    $"Difference of the sum of even and odd numbers by 10 = " +
             //    $"{LibraryForHWLesson3.DifferenceSumEvenAndOddNumbers(10)}");
-
+            //Console.WriteLine($"Check for Task 12, Find number 2 in number 314267 {LibraryForHWLesson3.FindNumberAbyB(2,314267)}");
 
         }
     }
