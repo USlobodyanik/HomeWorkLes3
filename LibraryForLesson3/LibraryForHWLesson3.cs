@@ -11,13 +11,13 @@ namespace LibraryForLesson3
             b = temp;
         }
 
-        public static int Power(int a, int b)
+        public static int Power(int numberA, int degree)
         {
-            int result = a;
+            int result = numberA;
 
-            for (int i = 1; i < b; i++)
+            for (int i = 1; i < degree; i++)
             {
-                result = result * a;
+                result *= numberA;
             }
 
             return result;
@@ -104,7 +104,7 @@ namespace LibraryForLesson3
             {
                 while (numberB != 0)
                 {
-                    if(numberA > numberB)
+                    if (numberA > numberB)
                     {
                         numberA -= numberB;
                     }
@@ -116,6 +116,69 @@ namespace LibraryForLesson3
             }
 
             return numberA;
+        }
+
+        public static int CubeRoot(int numberA)
+        {
+            int prevRoot = 0;
+            int result = 0;
+
+            int currentRoot = numberA / 2;
+            for (int i = 0; i < 20; i++)
+            {
+                int cubeRoot = LibraryForHWLesson3.Power(currentRoot, 3);
+                if (cubeRoot == numberA)
+                {
+                    result = currentRoot;
+                    break;
+                }
+                else if (cubeRoot > numberA)
+                {
+                    prevRoot = currentRoot;
+                    currentRoot /= 2;
+                }
+                else if (cubeRoot < numberA)
+                {
+                    currentRoot = (prevRoot + currentRoot) / 2;
+                }
+            }
+
+            return result;
+        }
+
+        public static int OddNumbersByNumberA(int numberA)
+        {
+            int count = 0;
+
+            for (int i = 1; i <= numberA; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        public static bool DifferenceSumEvenAndOddNumbers(int numberA)
+        {
+            int sumOddNumbers = 0;
+            int sumEvenNumbers = 0;
+
+            for (int i = 1; i <= numberA; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    sumOddNumbers += i;
+                }
+                else
+                {
+                    sumEvenNumbers += i;
+                }
+            }
+
+            return sumEvenNumbers > sumOddNumbers ? true : false;
         }
 
     }
